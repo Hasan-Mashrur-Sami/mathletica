@@ -1,0 +1,194 @@
+/* ===== Google Fonts Import ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;  <-- For headings
+  font-family: 'Lora', serif;             <-- For body text
+*/
+
+
+/* ===== General Styling & Variables ===== */
+:root {
+  --background-color: #f8f9fa; /* A very light, clean gray */
+  --card-background: #ffffff;    /* Pure white for cards/containers */
+  --text-color: #212529;       /* A dark charcoal for better readability */
+  --primary-color: #005A9C;     /* A professional, deep blue for links */
+  --primary-hover: #003d69;   /* A darker blue for hover effects */
+  --border-color: #dee2e6;       /* A light gray for borders */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Lora', serif; /* A clean, modern serif for body text */
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif; /* Geometric sans-serif to match the logo */
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Specific styling for the main "Mathletica" title */
+.main-title {
+  font-family: 'Lora', serif;
+  font-size: 3.5em; /* Make it prominent */
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+
+/* ===== Main Content Container ===== */
+/* This can be applied to the table or a div wrapping your main content */
+.content-container {
+  background: var(--card-background);
+  border: 1px solid var(--border-color); /* Sharper than a shadow */
+  border-radius: 4px; /* Less rounded for a modern look */
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+
+/* ===== Art Page Gallery Styling ===== */
+.gallery-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  font-family: 'Lora', serif;
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.polaroid-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Match container's sharper corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.polaroid-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 2px; /* Slightly rounded corners inside the card */
+}
+
+.caption {
+  margin-top: 15px;
+  font-size: 15px;
+  font-family: 'Lora', serif; /* Use the main body font for captions */
+  font-style: italic;
+  color: #555;
+}
+
+.polaroid-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.resource-ul {
+  list-style-type: disc; /* Standard bullet points */
+  padding-left: 20px; /* Indent the list */
+}
+
+.resource-ul li {
+  margin-bottom: 15px; /* Space between each list item */
+  line-height: 1.6;
+}
+
+.resource-ul li a {
+  font-weight: 600; /* Keep the link weight consistent */
+  white-space: nowrap; /* Prevents the link from breaking onto a new line */
+}
+.challenge-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 35px 40px;
+  max-width: 750px;
+  margin: 40px auto 60px auto; /* Centers the card */
+  text-align: center; /* Centers the content inside the card */
+}
+
+.challenge-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.challenge-card p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-hover);
+  text-decoration: none;
+  color: #ffffff;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
