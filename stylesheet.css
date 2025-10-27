@@ -1,330 +1,194 @@
-/*
-    Apple-inspired redesign for Mathletica
-    - Preserves your content and structure
-    - Adds light/dark support, subtle motion, better spacing
-    - Uses system SF-style fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, etc.
+/* ===== Google Fonts Import ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;  <-- For headings
+  font-family: 'Lora', serif;             <-- For body text
 */
 
-:root{
-    --bg: #f5f5f7;
-    --panel: #ffffff;
-    --text: #1d1d1f;
-    --muted: #6e6e73;
-    --accent: #007AFF;
-    --glass: rgba(255,255,255,0.6);
-    --card-shadow: 0 10px 30px rgba(24,24,24,0.06);
-    --radius: 14px;
-    --header-h: 64px;
-    --max-width: 1180px;
+
+/* ===== General Styling & Variables ===== */
+:root {
+  --background-color: #f8f9fa; /* A very light, clean gray */
+  --card-background: #ffffff;    /* Pure white for cards/containers */
+  --text-color: #212529;       /* A dark charcoal for better readability */
+  --primary-color: #005A9C;     /* A professional, deep blue for links */
+  --primary-hover: #003d69;   /* A darker blue for hover effects */
+  --border-color: #dee2e6;       /* A light gray for borders */
 }
 
-/* Dark theme variables */
-@media (prefers-color-scheme: dark){
-    :root{
-      --bg: #0b0b0c;
-      --panel: linear-gradient(180deg,#0f0f10,#0b0b0c);
-      --text: #f2f2f4;
-      --muted: #9b9b9f;
-      --accent: #0a84ff;
-      --glass: rgba(255,255,255,0.03);
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-    body[data-theme="light"]{
-      /* user override: force light when system is dark */
-      --bg: #f5f5f7;
-      --panel: #ffffff;
-      --text: #1d1d1f;
-      --muted: #6e6e73;
-      --accent: #007AFF;
-      --glass: rgba(255,255,255,0.6);
-      --card-shadow: 0 10px 30px rgba(24,24,24,0.06);
-    }
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Lora', serif; /* A clean, modern serif for body text */
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-/* If user toggles dark explicitly */
-body[data-theme="dark"]{
-    --bg: #0b0b0c;
-    --panel: linear-gradient(180deg,#0f0f10,#0b0b0c);
-    --text: #f2f2f4;
-    --muted: #9b9b9f;
-    --accent: #0a84ff;
-    --glass: rgba(255,255,255,0.03);
-    --card-shadow: 0 10px 30px rgba(0,0,0,0.6);
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif; /* Geometric sans-serif to match the logo */
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
 }
 
-/* Base reset & typography */
-*{box-sizing: border-box}
-html{scroll-behavior:smooth}
-body{
-    margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-    -webkit-text-size-adjust:100%;
+/* Specific styling for the main "Mathletica" title */
+.main-title {
+  font-family: 'Lora', serif;
+  font-size: 3.5em; /* Make it prominent */
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
-/* container */
-.container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-
-/* Header */
-header{
-    position:sticky; top:0; z-index:1200;
-    height:var(--header-h);
-    display:flex; align-items:center;
-    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    transition: background 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+p {
+  margin-bottom: 1em;
 }
 
-body[data-theme="dark"] header{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-bottom: 1px solid rgba(255,255,255,0.03); }
-
-.header-inner{
-    width:100%; display:flex; align-items:center; justify-content:space-between;
-    gap: 16px;
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
 }
 
-.brand{
-    display:flex; align-items:center; gap:12px;
-}
-.logo-wrap{width:36px;height:36px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--panel);box-shadow: var(--card-shadow);}
-.logo-wrap img{width:100%;height:100%;object-fit:cover}
-
-.brand h1{font-size:18px; font-weight:600; letter-spacing:-0.02em; margin:0}
-
-/* Nav */
-nav{display:flex; align-items:center; gap:26px}
-nav ul{display:flex; gap:28px; list-style:none; padding:0; margin:0; align-items:center}
-nav a{font-size:13px;color:var(--text);text-decoration:none;opacity:0.9;padding:8px 0;position:relative}
-nav a:hover{opacity:1}
-nav a:after{content:'';position:absolute;left:0;right:0;height:2px;bottom:-8px;background:transparent;transition:background 220ms, transform 220ms;transform:scaleX(0)}
-nav a:hover:after{background:var(--accent);transform:scaleX(1)}
-
-.nav-cta{background:var(--accent); color:white; padding:8px 14px; border-radius:999px; font-weight:600; font-size:13px; border:none; cursor:pointer; text-decoration:none}
-.nav-cta:hover{transform:translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.08);}
-
-/* header controls */
-.header-controls{display:flex; gap:12px; align-items:center}
-.icon-btn{width:44px;height:44px;border-radius:10px;border:none;background:transparent;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.icon-btn:focus{outline:2px solid var(--accent); outline-offset:2px}
-
-/* Mobile menu button */
-.menu-toggle{display:none}
-
-/* HERO */
-.hero{
-    position:relative;
-    padding: 88px 0 72px;
-    min-height: 68vh;
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
+a:hover,
+a:focus {
+  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
-.hero-inner{position:relative; z-index:3; text-align:center; max-width:980px; margin:0 auto}
-.hero h2{
-    font-size: clamp(36px, 6vw, 86px);
-    line-height:1.02;
-    font-weight:700;
-    margin:0 0 18px;
-    letter-spacing:-0.02em;
-    -webkit-font-smoothing:antialiased;
-}
-.hero p{
-    margin:0 auto 28px;
-    font-size: clamp(15px, 2.2vw, 21px);
-    color:var(--muted);
-    max-width:780px;
-    font-weight:400;
+
+/* ===== Main Content Container ===== */
+/* This can be applied to the table or a div wrapping your main content */
+.content-container {
+  background: var(--card-background);
+  border: 1px solid var(--border-color); /* Sharper than a shadow */
+  border-radius: 4px; /* Less rounded for a modern look */
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-.hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-.btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:12px 20px; border-radius:999px; cursor:pointer;
-    font-weight:600; border:none; text-decoration:none;
-    transition: transform 220ms ease, box-shadow 220ms;
-    background: var(--accent); color:#fff; font-size:15px;
-}
-.btn.secondary{
-    background:transparent; border:1px solid rgba(0,0,0,0.08); color:var(--accent);
-}
-body[data-theme="dark"] .btn.secondary{ border:1px solid rgba(255,255,255,0.06); color:var(--accent) }
 
-.btn:active{ transform:translateY(1px) }
-
-/* subtle hero ornament (equations) */
-.hero-ornaments{
-    position:absolute; inset:0; z-index:1; pointer-events:none;
-    display:block; opacity:0.09;
-    transition:opacity 300ms;
-    font-family: "Times New Roman", serif;
+/* ===== Art Page Gallery Styling ===== */
+.gallery-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.equation{
-    position:absolute; font-size:40px; transform-origin:center;
-    will-change: transform, opacity;
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  font-family: 'Lora', serif;
+  color: var(--text-color);
+  font-weight: normal;
 }
 
-/* positions (kept from your original) but simplified */
-.equation.e1{top:8%; left:6%; font-size:44px; transform: rotate(-6deg)}
-.equation.e2{top:20%; right:8%; font-size:40px; transform: rotate(3deg)}
-.equation.e3{bottom:36%; left:4%; font-size:48px; transform: rotate(-2deg)}
-.equation.e4{bottom:18%; right:6%; font-size:40px; transform: rotate(4deg)}
-.equation.e5{top:44%; left:18%; font-size:42px; transform: rotate(-3deg)}
-.equation.e6{top:64%; right:18%; font-size:36px; transform: rotate(2deg)}
-
-/* decorative gradient glow behind hero text */
-.hero-glow{
-    position:absolute; inset:auto 12% 14% 12%; z-index:0;
-    width:70%; height:60%;
-    background: radial-gradient(circle at 30% 20%, rgba(0,122,255,0.12), transparent 12%),
-                radial-gradient(circle at 80% 70%, rgba(10,132,255,0.08), transparent 12%);
-    filter: blur(36px);
-    pointer-events:none;
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
 }
 
-/* Sections */
-section{padding:88px 0; position:relative}
-.section-title{text-align:center; margin-bottom:48px}
-.section-title h2{font-size: clamp(24px, 5vw, 48px); margin:0; font-weight:700}
-.section-title p{color:var(--muted); margin-top:10px; font-size:16px}
-
-/* About layout */
-.about-grid{display:grid; grid-template-columns: 1fr; gap:28px; align-items:center}
-.about-text h3{font-size:28px;margin:0 0 16px;font-weight:700}
-.about-text p{color:var(--muted); margin-bottom:12px}
-.about-image{border-radius:16px; overflow:hidden; box-shadow:var(--card-shadow); background:var(--panel)}
-.about-image img{width:100%;height:auto;display:block;transition:transform 420ms ease}
-
-.about-image:hover img{transform:scale(1.03)}
-
-/* Research cards grid */
-.grid{display:grid; gap:24px}
-.research-grid{grid-template-columns:1fr; margin-top:12px}
-.card{
-    background:var(--panel);
-    border-radius:var(--radius);
-    box-shadow:var(--card-shadow);
-    border:1px solid rgba(0,0,0,0.04);
-    overflow:hidden;
-    transition: transform 280ms ease, box-shadow 280ms ease;
-}
-body[data-theme="dark"] .card{ border:1px solid rgba(255,255,255,0.03) }
-
-.card:hover{ transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12) }
-
-.card .media{height:220px; overflow:hidden}
-.card .media img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
-.card:hover .media img{transform:scale(1.07)}
-
-.card .card-body{padding:22px}
-.card h3{margin:0 0 8px;font-size:20px}
-.card p{color:var(--muted); margin:0 0 12px}
-
-.research-link{color:var(--accent); text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:8px}
-.pdf-download{margin-top:16px; padding:16px; border-radius:12px; background: linear-gradient(180deg, rgba(0,122,255,0.03), rgba(0,122,255,0.01)); border-left:4px solid var(--accent)}
-
-/* Resources */
-.resources-grid{grid-template-columns:1fr; gap:18px}
-.resource-card{padding:30px; text-align:center}
-.resource-icon{width:68px;height:68px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;background:linear-gradient(135deg,var(--accent), #0051CC); color:white}
-
-/* Challenge layout */
-.challenge-grid{display:grid; grid-template-columns:1fr; gap:28px}
-.challenge-image img{width:100%;height:auto;border-radius:12px}
-
-/* CTA */
-.cta{
-    padding:72px 0; 
-    border-radius:16px; 
-    margin:28px 0 0; 
-    background: linear-gradient(135deg, var(--accent), #0051CC); 
-    color:white; 
-    text-align:center;
-    position: relative;
-    overflow: hidden;
+.polaroid-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Match container's sharper corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-    background-size: cover;
+.polaroid-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.cta h2{margin:0 0 12px;font-size:28px}
-.cta p{margin:0 0 18px;opacity:0.95}
-
-/* Glass effect for both buttons in CTA */
-.cta .btn {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    transition: all 0.3s ease;
+.polaroid-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 2px; /* Slightly rounded corners inside the card */
 }
 
-.cta .btn.secondary {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.caption {
+  margin-top: 15px;
+  font-size: 15px;
+  font-family: 'Lora', serif; /* Use the main body font for captions */
+  font-style: italic;
+  color: #555;
 }
 
-.cta .btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.polaroid-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-/* Footer */
-footer{padding:56px 0 40px;border-top:1px solid rgba(0,0,0,0.04)}
-body[data-theme="dark"] footer{ border-top:1px solid rgba(255,255,255,0.03) }
-.footer-grid{display:grid; grid-template-columns:1fr; gap:28px}
-.footer-column h3{margin:0 0 10px;font-size:18px}
-.footer-links{list-style:none;padding:0;margin:0}
-.footer-links li{margin-bottom:10px;color:var(--muted)}
-.social-links{display:flex; gap:12px}
-
-.copyright{margin-top:20px;color:var(--muted);font-size:14px;text-align:center}
-
-/* Responsive layout */
-@media(min-width:760px){
-    .about-grid{grid-template-columns: 52% 44%}
-    .research-grid{grid-template-columns: repeat(3, 1fr)}
-    .resources-grid{grid-template-columns: repeat(3, 1fr)}
-    .challenge-grid{grid-template-columns: 48% 48%}
-    .footer-grid{grid-template-columns: repeat(3, 1fr)}
+.resource-ul {
+  list-style-type: disc; /* Standard bullet points */
+  padding-left: 20px; /* Indent the list */
 }
 
-/* Mobile: header collapse */
-@media(max-width:760px){
-    nav{display:none}
-    .menu-toggle{display:inline-flex}
-    header{padding:0 12px}
-    .hero{padding:56px 0 40px}
-    section{padding:56px 0}
+.resource-ul li {
+  margin-bottom: 15px; /* Space between each list item */
+  line-height: 1.6;
 }
 
-/* small screens typography */
-@media(max-width:420px){
-    .brand h1{font-size:16px}
-    .hero h2{font-size:36px}
+.resource-ul li a {
+  font-weight: 600; /* Keep the link weight consistent */
+  white-space: nowrap; /* Prevents the link from breaking onto a new line */
+}
+.challenge-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 35px 40px;
+  max-width: 750px;
+  margin: 40px auto 60px auto; /* Centers the card */
+  text-align: center; /* Centers the content inside the card */
 }
 
-/* accessibility: respects reduced motion */
-@media (prefers-reduced-motion: reduce){
-    *{transition:none!important; animation:none!important}
+.challenge-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-/* tiny utility */
-.muted{color:var(--muted)}
-.hidden{display:none}
+.challenge-card p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-hover);
+  text-decoration: none;
+  color: #ffffff;
+  transform: translateY(-2px); /* Slight lift on hover */
+}

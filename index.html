@@ -1,384 +1,96 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mathletica | Mathematics Club</title>
-  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/rfZTggVX/Mathletica-Logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="stylesheet.css">
-  
-  <meta name="theme-color" content="#ffffff" id="meta-theme-color">
-</head>
-<body>
-  <header>
-    <div class="container header-inner" role="banner">
-      <div class="brand" aria-hidden="false">
-        <div class="logo-wrap" aria-hidden="true">
-          <img src="https://i.ibb.co/rfZTggVX/Mathletica-Logo.png" alt="Mathletica logo">
-        </div>
-        <h1>Mathletica</h1>
-      </div>
-
-      <nav role="navigation" aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#challenge">Challenge</a></li>
-          <li><a href="#contact" class="nav-cta">Join Us</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-controls" role="group" aria-label="Header controls">
-        <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-pressed="false" aria-label="Toggle light and dark mode">
-          <i class="fas fa-moon"></i>
-        </button>
-
-        <button class="icon-btn menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-
-    <nav id="mobileMenu" class="hidden" aria-hidden="true" style="position:absolute; left:0; right:0; top:64px; background:var(--panel); border-bottom:1px solid rgba(0,0,0,0.04); box-shadow: var(--card-shadow);">
-      <div class="container" style="padding:12px 24px;">
-        <ul style="list-style:none; margin:0; padding:0;">
-          <li style="padding:10px 0;"><a href="#about">About</a></li>
-          <li style="padding:10px 0;"><a href="#research">Research</a></li>
-          <li style="padding:10px 0;"><a href="#resources">Resources</a></li>
-          <li style="padding:10px 0;"><a href="#challenge">Challenge</a></li>
-          <li style="padding:10px 0;"><a href="#contact" class="nav-cta">Join Us</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-ornaments" aria-hidden="true">
-        <div class="equation e1">∫ f(x) dx</div>
-        <div class="equation e2">∑<sub>n=1</sub><sup>∞</sup> 1/n²</div>
-        <div class="equation e3">e<sup>iπ</sup> + 1 = 0</div>
-        <div class="equation e4">∇ × E = -∂B/∂t</div>
-        <div class="equation e5">F = G(m₁m₂)/r²</div>
-        <div class="equation e6">a² + b² = c²</div>
-      </div>
-
-      <div class="hero-glow" aria-hidden="true"></div>
-
-      <div class="container hero-inner">
-        <h2 id="hero-heading">Explore the World of Mathematics</h2>
-        <p>Mathletica is a mathematics club for those who seek to embark on a journey with numbers: explore, question, and deeply understand the beauty of mathematics.</p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#about">Learn More</a>
-          <a class="btn secondary" href="#contact">Join Our Club</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-title">
-          <h2>About Mathletica</h2>
-          <p>Discover our mission and what makes our mathematics community unique</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <!-- <h3>Journey with Numbers</h3> -->
-            <p class="muted">Mathletica is the Math Club founded for people who seek to embark on a journey with numbers: explore, question and deeply understand areas of mathematics.</p>
-            <p class="muted">Our club helps members learn advanced math topics, engage in research, and support one another in developing stronger conceptual foundations.</p>
-            <p class="muted">Mathletica also works to make mathematics accessible to everyone by providing free math education to underprivileged students in rural areas.</p>
-          </div>
-
-          <div class="about-image card" aria-hidden="false">
-            <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mathematics Visualization">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="research" class="research">
-      <div class="container">
-        <div class="section-title">
-          <h2>Research & Notes</h2>
-          <p>Explore our latest mathematical research and educational materials</p>
-        </div>
-
-        <!-- https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 -->
-        <div class="grid research-grid">
-          <article class="card">
-            <div class="media"><img src="/images/prime_pattern.png" alt="Number Theory"></div>
-            <div class="card-body">
-              <h3>Number Theory Notes</h3>
-              <p class="muted">Comprehensive notes covering prime numbers, modular arithmetic, and Diophantine equations.</p>
-              <a class="research-link" href="/notes/Maths_Number_Thoery (2).pdf">View Notes <i class="fas fa-arrow-right"></i></a>
-
-            </div>
-          </article>
-
-          <!-- https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 -->
-          <article class="card">
-            <div class="media"><img src="/images/py_triple.png" alt="Pythagorean Theorem"></div>
-            <div class="card-body">
-              <h3>Pythagorean Triple Research</h3>
-              <p class="muted">Exploring the properties and applications of Pythagorean triples in modern mathematics.</p>
-              <a class="research-link" href="/notes/Pythagorean_Triples__Sami_.pdf">Read Research <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>
-
-          <!-- https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 -->
-          <article class="card">
-            <div class="media"><img src="/images/crypt.png" alt="Cryptography"></div>
-            <div class="card-body">
-              <h3>Number Theory for Cryptography</h3>
-              <p class="muted">Applications of number theory in modern cryptographic systems and security protocols.</p>
-              <a class="research-link" href="#">Explore Applications <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources" class="resources">
-      <div class="container">
-        <div class="section-title">
-          <h2>Resources</h2>
-          <p>Engage with the global mathematical community through competitions and events</p>
-        </div>
-
-        <div class="grid resources-grid">
-          <div class="resource-card card">
-            <div style="padding-top:10px;">
-              <div class="resource-icon"><i class="fas fa-globe-americas"></i></div>
-              <h3>International Mathematical Olympiad (IMO)</h3>
-              <p class="muted">The world championship mathematics competition for high school students, held annually in a different country.</p>
-              <a class="btn" href="https://www.imo-official.org/" target="_blank" rel="noopener">Learn More</a>
-            </div>
-          </div>
-
-          <div class="resource-card card">
-            <div style="padding-top:10px;">
-              <div class="resource-icon"><i class="fas fa-trophy"></i></div>
-              <h3>William Lowell Putnam Competition</h3>
-              <p class="muted">A challenging mathematics competition for undergraduate college students in the United States and Canada.</p>
-              <a class="btn" href="https://www.maa.org/math-competitions/putnam-competition" target="_blank" rel="noopener">Learn More</a>
-            </div>
-          </div>
-
-          <div class="resource-card card">
-            <div style="padding-top:10px;">
-              <div class="resource-icon"><i class="fas fa-female"></i></div>
-              <h3>European Girls' Mathematical Olympiad (EGMO)</h3>
-              <p class="muted">An international competition for high school girls, created to encourage and support young women in mathematics.</p>
-              <a class="btn" href="https://www.egmo.org/" target="_blank" rel="noopener">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="challenge" class="challenge">
-      <div class="container">
-        <div class="section-title">
-          <h2>Mathletica Challenge</h2>
-          <p>Test your mathematical skills with our engaging problem sets</p>
-        </div>
-
-        <div class="challenge-grid">
-          <div class="challenge-image card">
-            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Math Challenge">
-          </div>
-
-          <div class="challenge-text">
-            <h3>"10 Math Problems I Wish I Had Solved Before"</h3>
-            <p class="muted">This open challenge invites members to explore, solve, and share 10 intriguing math problems that have sparked their curiosity.</p>
-            <p class="muted">By participating, members contribute to a growing collection of mathematical ideas and perspectives.</p>
-            <p><a class="btn" href=mailto:"hasanmashrursami07@gmail.com">Share Your Problems</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact" aria-labelledby="footer-heading">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>Contact Us</h3>
-          <ul class="footer-links" style="margin:0; padding:0;">
-            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-envelope" aria-hidden="true"></i><span class="muted">mathleticaclub@gmail.com</span></li>
-            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-phone" aria-hidden="true"></i><span class="muted">+8801754637591</span></li>
-            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span class="muted">Chittagong, Bangladesh</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <p>&copy; 2025 Mathletica. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Respect reduced motion
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Parallax-ish micro animation for equations: small translate on scroll
-    (function(){
-      if (prefersReduced) return;
-
-      const eqs = document.querySelectorAll('.equation');
-      function onScroll(){
-        const scrollY = window.scrollY;
-        eqs.forEach((el, i) => {
-          // small movement based on index for depth effect
-          const speed = 0.03 + (i * 0.01);
-          const offset = (scrollY * speed) % 200;
-          el.style.transform = el.style.transform.replace(/translateY\([^)]*\)/,'') + ` translateY(${ -offset }px)`;
-          // subtle rotate oscillation:
-          const angle = Math.sin((scrollY + i*50)/250) * 2;
-          el.style.transform += ` rotate(${angle}deg)`;
-        });
-      }
-      window.addEventListener('scroll', onScroll, { passive:true });
-      // initial call
-      onScroll();
-    })();
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.setAttribute('aria-hidden', String(expanded));
-      });
-
-      // close on link click
-      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-      }));
-    }
-
-    // Smooth scroll with offset for sticky header
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const headerOffset = 64; // header height
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Theme handling: follows system, but user can override. Persist choice in localStorage.
-    const themeToggle = document.getElementById('themeToggle');
-    const metaTheme = document.getElementById('meta-theme-color');
-
-    // helpers
-    const saveTheme = (value) => localStorage.setItem('mathletica-theme', value);
-    const loadTheme = () => localStorage.getItem('mathletica-theme');
-
-    function applyTheme(theme){
-      if(theme === 'dark'){
-        document.body.setAttribute('data-theme','dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        themeToggle.setAttribute('aria-pressed','true');
-        if(metaTheme) metaTheme.content = '#0b0b0c';
-      } else if(theme === 'light'){
-        document.body.setAttribute('data-theme','light');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        themeToggle.setAttribute('aria-pressed','false');
-        if(metaTheme) metaTheme.content = '#ffffff';
-      } else {
-        // follow system: remove data-theme
-        document.body.removeAttribute('data-theme');
-        const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        themeToggle.setAttribute('aria-pressed', String(isDark));
-        if(metaTheme) metaTheme.content = isDark ? '#0b0b0c' : '#ffffff';
-      }
-    }
-
-    // initialize
-    (function initTheme(){
-      const stored = loadTheme();
-      if(stored === 'dark' || stored === 'light'){
-        applyTheme(stored);
-      } else {
-        applyTheme(null); // follow system
-      }
-    })();
-
-    if(themeToggle){
-      themeToggle.addEventListener('click', () => {
-        const current = localStorage.getItem('mathletica-theme');
-        if(current === 'dark'){
-          saveTheme('light');
-          applyTheme('light');
-        } else if(current === 'light'){
-          // go back to system
-          localStorage.removeItem('mathletica-theme');
-          applyTheme(null);
-        } else {
-          // no stored preference: toggle based on system
-          const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          saveTheme(isDark ? 'light' : 'dark');
-          applyTheme(isDark ? 'light' : 'dark');
-        }
-      });
-
-      // keyboard accessibility: Enter/Space should toggle
-      themeToggle.addEventListener('keydown', (e)=>{
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          themeToggle.click();
-        }
-      });
-    }
-
-    // Update theme button when system preference changes (only if user hasn't pinned a theme)
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const stored = loadTheme();
-      if(!stored){
-        applyTheme(null);
-      }
-    });
-
-    // simple intersection observer for reveal animations (respects reduced motion)
-    (function revealOnScroll(){
-      if(prefersReduced) return;
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            entry.target.style.transition = 'opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1)';
-            io.unobserve(entry.target);
-          }
-        });
-      }, {threshold: 0.08});
-
-      document.querySelectorAll('.card, .about-image, .resource-card, .challenge-image').forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(10px)';
-        io.observe(el);
-      });
-    })();
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Mathletica</title>
+  <meta name="author" content="Hasan Mashrur Sami">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="./images/mathsami_bg.png" sizes="32x32">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.js">
   </script>
+</head>
+
+<body class="art-page">
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:2.5%;width:63%;vertical-align:middle">
+        <p style="text-align:center">
+            <img src="./images/mathsami_bg.png" alt="Mathletica Logo" style="width:100px; margin-bottom: 15px;">
+            <heading style="display:block; font-size:3em; margin-bottom: 10px;">Mathletica</heading>
+        </p>
+        <p style="font-style: italic; text-align: center; margin-bottom: 20px;">
+        </p>
+        <p>
+          Welcome to Mathletica!  
+        </p>
+        <p>
+          Mathletica is the Math Club founded for people who seek to embark on a journey with numbers: explore, question and deeply understand areas of mathematics. Our club helps members learn advanced math topics, engage in research, and support one another in developing stronger conceptual foundations. Mathletica also works to make mathematics accessible to everyone by providing free math education to underprivileged students in rural areas.
+        </p>
+      </td>
+    </tr>
+  </tbody></table>
+
+  <div class="gallery-wrapper">
+    <h2 class="section-title">Research & Notes</h2>
+
+    <div class="polaroid-gallery">
+      <a href="/notes/Maths_Number_Thoery (2).pdf" class="polaroid-card-link">
+        <div class="polaroid-card">
+          <img src="./images/prime_pattern.png" alt="">
+          <p class="caption">Number Theory Notes</p>
+        </div>
+      </a>
+      <a href="/notes/Pythagorean_Triples__Sami_.pdf" class="polaroid-card-link">
+        <div class="polaroid-card">
+          <img src="./images/py_triple.png" alt="">
+          <p class="caption">Pythagorean Triple Research</p>
+        </div>
+      </a>
+      <a href="" class="polaroid-card-link">
+        <div class="polaroid-card">
+          <img src="./images/crypt.png" alt="">
+          <p class="caption">Number Theory for Cryptography</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="gallery-wrapper">
+    <h2 class="section-title">Resources</h2>
+    <p class="section-subtitle-simple">
+        Mathletica encourages students to engage with the global mathematical community by participating in renowned events and competitions held each year.
+    </p>
+
+    <ul class="resource-ul">
+        <li>
+            <strong>International Mathematical Olympiad (IMO):</strong> The world championship mathematics competition for high school students, held annually in a different country. 
+            <a href="https://www.imo-official.org/" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </li>
+        <li>
+            <strong>William Lowell Putnam Competition:</strong> A challenging mathematics competition for undergraduate college students in the United States and Canada.
+            <a href="https://www.maa.org/math-competitions/putnam-competition" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </li>
+        <li>
+            <strong>European Girls’ Mathematical Olympiad (EGMO):</strong> An international competition for high school girls, created to encourage and support young women in pursuing mathematics.
+            <a href="https://www.egmo.org/" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </li>
+    </ul>
+  </div>
+  <div class="gallery-wrapper">
+    <h2 class="section-title">Mathletica Challenge</h2>
+
+    <div class="challenge-card">
+        <h3>"10 Math Problems I Wish I Had Solved Before"</h3>
+        <p>
+            This open challenge invites members to explore, solve, and share 10 intriguing math problems that have sparked their curiosity. By participating, members contribute to a growing collection of mathematical ideas and perspectives.
+        </p>
+        <a href="mailto:hasanmashrursami07@gmail.com" class="cta-button">Share Your Problems</a>
+    </div>
+</div>
+  <p style="text-align: center">
+    <a href="hasanmashrursami07@gmail.com" target="_blank" rel="noopener noreferrer">Join Our Mailing List</a> 
+  </p>
 </body>
+
 </html>
